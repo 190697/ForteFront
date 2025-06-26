@@ -1,0 +1,45 @@
+<section class="container">
+    <h1>Tareas</h1>
+    <section class="tareas mt-2">
+        <div class="mt-3 mb-3">
+            <a routerLink="/tarea/crear" class="btn btn-success">Nueva Tarea</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Desripcion</th>
+                    <th scope="col">Estatus</th>
+                    <th scope="col">Fecha Creación</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @for(tarea of tareas;  track tarea.id){
+                    <tr>
+                        <th scope="row">{{tarea.id}}</th>
+                        <td>{{ tarea.titulo }}</td>
+                        <td>{{ tarea.descripcion }}</td>
+                        <td>
+                            <span class="badge"
+                                [ngClass]="{
+                                    'bg-warning text-dark': tarea.id_Estatus == 1,
+                                    'bg-info text-dark': tarea.id_Estatus == 2,
+                                    'bg-success': tarea.id_Estatus == 3
+                                }">
+                                {{ tarea.estatus }}
+                            </span>
+                        </td>
+                        <td>{{ tarea.fecha_Registro }}</td>
+                        <td>
+                            <button [routerLink]="['/tarea', tarea.id, 'editar']" class="btn btn-primary mt-1" >Editar</button>
+                            &nbsp;
+                            <button [routerLink]="['/tarea', tarea.id, 'eliminar']" class="btn btn-danger mt-1" >Eliminar</button>
+                        </td>
+                }
+            </tbody>
+        </table>
+    </section>
+</section>

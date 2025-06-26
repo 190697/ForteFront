@@ -1,0 +1,30 @@
+<section class="container">
+    <h3>Editar Tarea</h3>
+    <hr>
+    <section class="tareas mt-2">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="mb-0">Detalles de la Tarea</h4>
+            <a routerLink="/tarea" class="btn btn-outline-warning">Regresar</a>
+        </div>
+        <form (ngSubmit)="submit()">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Titulo</label>
+                <input [(ngModel)]="model.titulo" type="text" class="form-control" id="titulo" name="titulo">
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion</label>
+                <textarea [(ngModel)]="model.descripcion" class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="estatus" class="form-label">Estatus</label>
+                <select [(ngModel)]="model.id_Estatus" class="form-select" id="estatus" name="estatus">
+                    <option value="" selected disabled>Selecciona un estatus</option>
+                    <option value="1">Pendiente</option>
+                    <option value="2">En Progreso</option>
+                    <option value="3">Completada</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar Tarea</button>
+        </form>
+    </section>
+</section>

@@ -1,0 +1,35 @@
+h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  color: #2d3748;
+}
+
+h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.2rem;
+  color: #4a5568;
+  font-weight: 400;
+}
+
+p {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.card {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.card-info {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}

@@ -1,0 +1,35 @@
+<section class="container">
+    <h3>Editar Tarea</h3>
+    <hr>
+    <section class="tareas mt-4 p-4 rounded shadow bg-white">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="mb-0">Detalles de la Tarea</h4>
+            <a routerLink="/tarea" class="btn btn-warning">Regresar</a>
+        </div>
+        <form (ngSubmit)="submit()">
+            <div class="mb-4">
+                <label class="form-label fw-bold">Título</label>
+                <div class="form-control-plaintext fs-5 text-dark">{{ model.titulo }}</div>
+            </div>
+            <div class="mb-4">
+                <label class="form-label fw-bold">Descripción</label>
+                <div class="form-control-plaintext text-secondary">{{ model.descripcion }}</div>
+            </div>
+            <div class="mb-4">
+                <label class="form-label fw-bold">Estatus</label>
+                <br>
+                <span class="badge"
+                    [ngClass]="{
+                        'bg-warning text-dark': model.id_Estatus == 1,
+                        'bg-info text-dark': model.id_Estatus == 2,
+                        'bg-success': model.id_Estatus == 3
+                    }">
+                    {{ model.id_Estatus == 1 ? 'Pendiente' : model.id_Estatus == 2 ? 'En Progreso' : model.id_Estatus == 3 ? 'Completada' : '' }}
+                </span>
+            </div>
+            <button type="submit" class="btn btn-danger py-2">
+                Eliminar Tarea
+            </button>
+        </form>
+    </section>
+</section>
